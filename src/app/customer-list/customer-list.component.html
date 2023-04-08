@@ -1,0 +1,15 @@
+<h2>Customer list Exercise<h2>
+<div class="container">
+    <form [formGroup]="formCustomer" (ngSubmit)="processForm()">
+        <input id="customer-name" class="customer-name" type="text" data-testid="customer-name" formControlName="name" placeholder="Name">
+        <button type="submit" class="button" data-testid="submit-button">Add customer to list</button>
+    </form>
+    <div>
+        <p>Customers List</p>   
+        <ul class="customer-list" data-testid="customer-list" *ngIf="customers.length > 0">
+            <li class="customer-index" *ngFor="let customer of customers; let i = index">
+                {{ customer }}
+            </li> 
+        </ul>
+    </div>
+</div>
