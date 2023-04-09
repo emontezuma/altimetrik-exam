@@ -4,8 +4,9 @@
         <input id="customer-name" class="customer-name" type="text" data-testid="customer-name" formControlName="name" placeholder="Name">
         <button type="submit" class="button" data-testid="submit-button">Add customer to list</button>
     </form>
+    <hr>
     <div>
-        <p>Customers List</p>   
+        <p>Customers List ({{ customers.length }})</p>   
         <ul class="customer-list" data-testid="customer-list" *ngIf="customers.length > 0">
             <li class="customer-index" *ngFor="let customer of customers; let i = index">
                 {{ customer }}
